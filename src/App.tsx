@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import { GitContextJsx } from "./context/GitContext";
+import { GitContextTsx } from "./context/GitContext";
 import { Router } from "./Router";
 export function App() {
   return (
-    <GitContextJsx>
+    <GitContextTsx>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
-    </GitContextJsx>
+    </GitContextTsx>
   );
 }

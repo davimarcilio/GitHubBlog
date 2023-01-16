@@ -25,13 +25,13 @@ interface GitContextType {
   items: Item[];
   user: User;
 }
-const GitContext = createContext({} as GitContextType);
+export const GitContext = createContext({} as GitContextType);
 
 interface GitContextProps {
   children: ReactNode;
 }
 
-export function GitContextJsx({ children }: GitContextProps) {
+export function GitContextTsx({ children }: GitContextProps) {
   const [items, setItems] = useState([] as Item[]);
   const [user, setUser] = useState({} as User);
 
