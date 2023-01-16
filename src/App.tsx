@@ -1,9 +1,10 @@
 import { Header } from "./components/Header";
+import { GitContextJsx } from "./context/GitContext";
 
 export function App() {
   return (
-    <div>
+    <GitContextJsx>
       <Header />
-    </div>
+    </GitContextJsx>
   );
 }
