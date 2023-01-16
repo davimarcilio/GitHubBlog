@@ -9,9 +9,11 @@ export function Home() {
   return (
     <section>
       <Profile />
-      {items.map((item) => (
-        <ItemIssue key={item.id} item={item} />
-      ))}
+      <div className="grid grid-cols-2 gap-8">
+        {items.map((item) => (
+          <ItemIssue key={item.id} item={item} />
+        ))}
+      </div>
     </section>
   );
 }
