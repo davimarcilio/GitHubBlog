@@ -11,7 +11,7 @@ export function Profile() {
   const { user } = useContext(GitContext);
 
   return (
-    <section className="flex px-10 py-8 shadow-xl items-center bg-base-profile absolute gap-8 rounded-xl">
+    <section className="flex px-10 py-8 shadow-xl items-center bg-base-profile  gap-8 rounded-xl">
       <img className=" rounded-lg w-36" src={user.avatar_url} alt="" />
       <div className="flex flex-col gap-2 flex-1">
         <div className="flex justify-between">

@@ -5,9 +5,9 @@ export function DefaultLayout() {
   return (
     <div className="text-base-title font-Nunito">
       <Header />
-      <div className="max-w-4xl w-full px-10 -mt-28 mx-auto">
+      <main className="max-w-4xl w-full absolute px-10 -mt-28 left-1/2 -translate-x-1/2">
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 }

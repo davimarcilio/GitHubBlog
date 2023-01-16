@@ -11,7 +11,7 @@ interface User {
   login: string;
 }
 
-interface Item {
+export interface Item {
   id: number;
   title: string;
   user: {
