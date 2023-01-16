@@ -1,10 +1,12 @@
-import { Header } from "./components/Header";
+import { BrowserRouter } from "react-router-dom";
 import { GitContextJsx } from "./context/GitContext";
-
+import { Router } from "./Router";
 export function App() {
   return (
     <GitContextJsx>
-      <Header />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </GitContextJsx>
   );
 }

@@ -12,6 +12,7 @@ interface User {
 }
 
 interface Item {
+  id: number;
   title: string;
   user: {
     url: string;
@@ -22,6 +23,7 @@ interface Item {
 
 interface GitContextType {
   items: Item[];
+  user: User;
 }
 const GitContext = createContext({} as GitContextType);
 
@@ -44,6 +46,7 @@ export function GitContextJsx({ children }: GitContextProps) {
 
     for (let i = 0; i < response.data.items.length; i++) {
       const {
+        id,
         title,
         user: { url },
         body,
@@ -51,7 +54,7 @@ export function GitContextJsx({ children }: GitContextProps) {
       } = response.data.items[i] as Item;
       setItems((state) => [
         ...state,
-        { title, body, created_at, user: { url } },
+        { id, title, body, created_at, user: { url } },
       ]);
     }
     const responseUser = await api.get("/users/daltonmenezes");
@@ -65,6 +68,8 @@ export function GitContextJsx({ children }: GitContextProps) {
   }, []);
 
   return (
-    <GitContext.Provider value={{ items }}>{children}</GitContext.Provider>
+    <GitContext.Provider value={{ items, user }}>
+      {children}
+    </GitContext.Provider>
   );
 }
