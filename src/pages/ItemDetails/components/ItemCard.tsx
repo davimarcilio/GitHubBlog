@@ -1,36 +1,20 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faAngleLeft,
-  faBuilding,
   faCalendarDay,
   faComment,
   faUpRightFromSquare,
-  faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { formatDistance } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
-import { useContext } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import { GitContext } from "../../../context/GitContext";
+import { NavLink } from "react-router-dom";
+import { Item } from "../../../context/GitContext";
 
-export function ItemCard() {
-  const { items } = useContext(GitContext);
+interface ItemCardProps {
+  selectedItem: Item;
+  ItemDate: string;
+}
 
-  const { id } = useParams();
-
-  const filteredItem = items.filter((item) => item.id == Number(id));
-  const selectedItem = filteredItem[0];
-
-  const ItemDate = formatDistance(
-    new Date(selectedItem.created_at),
-    new Date(),
-    {
-      addSuffix: true,
-      locale: ptBR,
-    }
-  );
-
+export function ItemCard({ selectedItem, ItemDate }: ItemCardProps) {
   return (
     <section className="flex px-10 py-8 shadow-xl items-center bg-base-profile  gap-8 rounded-xl">
       <div className="flex flex-col justify-between gap-5  flex-1">
