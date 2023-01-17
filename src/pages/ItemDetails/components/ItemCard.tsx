@@ -30,7 +30,6 @@ export function ItemCard({ selectedItem, ItemDate }: ItemCardProps) {
             GITHUB <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
           </a>
         </div>
-        {/* <p className="text-base text-base-text">{user.bio}</p> */}
         <h1 className="text-2xl font-bold text-base-title">
           {selectedItem.title}
         </h1>

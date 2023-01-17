@@ -11,6 +11,9 @@ export function ItemDetails() {
 
   const { id } = useParams();
 
+  if (items.length === 0) {
+    return <p></p>;
+  }
   const filteredItem = items.filter((item) => item.id == Number(id));
   const selectedItem = filteredItem[0];
 
