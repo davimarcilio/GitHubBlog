@@ -45,6 +45,7 @@ export function GitContextTsx({ children }: GitContextProps) {
     const response = await api.get(
       "/search/issues?q=Dynamic%20typing%20repo:daltonmenezes/test"
     );
+    console.log(response.data.items.length);
 
     for (let i = 0; i < response.data.items.length; i++) {
       const {
@@ -67,7 +68,11 @@ export function GitContextTsx({ children }: GitContextProps) {
   }
 
   useEffect(() => {
-    getItems();
+    console.log(items);
+
+    if (items.length === 0) {
+      getItems();
+    }
   }, []);
 
   return (

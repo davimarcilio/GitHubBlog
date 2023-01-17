@@ -11,7 +11,7 @@ export function Home() {
       <Profile />
       <div className="grid grid-cols-2 gap-8">
         {items.map((item) => (
-          <ItemIssue key={item.id} item={item} />
+          <ItemIssue key={item.created_at} item={item} />
         ))}
       </div>
     </section>
