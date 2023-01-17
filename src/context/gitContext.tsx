@@ -15,9 +15,11 @@ export interface Item {
   id: number;
   title: string;
   user: {
+    login: string;
     url: string;
   };
   body: string;
+  comments: number;
   created_at: string;
 }
 
@@ -48,13 +50,14 @@ export function GitContextTsx({ children }: GitContextProps) {
       const {
         id,
         title,
-        user: { url },
+        user: { url, login },
         body,
         created_at,
+        comments,
       } = response.data.items[i] as Item;
       setItems((state) => [
         ...state,
-        { id, title, body, created_at, user: { url } },
+        { id, title, body, created_at, user: { url, login }, comments },
       ]);
     }
     const responseUser = await api.get("/users/daltonmenezes");
