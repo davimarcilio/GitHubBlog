@@ -20,13 +20,15 @@ export function ItemCard({ selectedItem, ItemDate }: ItemCardProps) {
       <div className="flex flex-col justify-between gap-5  flex-1">
         <div className="flex justify-between text-blue font-bold text-xs">
           <NavLink
-            className={"flex gap-2 justify-center items-center"}
+            className={
+              "flex gap-2 justify-center items-center hover:underline hover:underline-offset-4"
+            }
             to={"/"}
           >
             <FontAwesomeIcon size="sm" icon={faAngleLeft} />
             VOLTAR
           </NavLink>
-          <a className="" href={"# "}>
+          <a className="hover:underline hover:underline-offset-4" href={"# "}>
             GITHUB <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
           </a>
         </div>

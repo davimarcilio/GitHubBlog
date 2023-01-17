@@ -66,13 +66,12 @@ export function GitContextTsx({ children }: GitContextProps) {
       responseUser.data as User;
     setUser({ avatar_url, bio, company, followers, html_url, login, name });
   }
-
+  let i = 0;
   useEffect(() => {
-    console.log(items);
-
-    if (items.length === 0) {
+    if (i === 0) {
       getItems();
     }
+    i = i + 1;
   }, []);
 
   return (

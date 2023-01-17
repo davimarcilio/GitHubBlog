@@ -16,7 +16,10 @@ export function Profile() {
       <div className="flex flex-col gap-2 flex-1">
         <div className="flex justify-between">
           <h1 className="text-2xl font-bold text-base-title">{user.name}</h1>
-          <a className="text-blue font-bold text-xs" href={user.html_url}>
+          <a
+            className="text-blue font-bold text-xs hover:underline hover:underline-offset-4"
+            href={user.html_url}
+          >
             GITHUB <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
           </a>
         </div>

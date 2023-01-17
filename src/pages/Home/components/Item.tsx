@@ -14,7 +14,7 @@ export function ItemIssue({ item }: ItemProps) {
   });
   return (
     <NavLink
-      className="bg-base-post p-8 flex flex-col gap-5 cursor-pointer rounded-lg"
+      className="bg-base-post p-8 flex flex-col gap-5 cursor-pointer rounded-lg border-2 hover:border-base-label transition-colors border-base-post"
       to={`/${item.id}`}
     >
       <div className="flex">
