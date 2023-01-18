@@ -28,8 +28,12 @@ export function ItemCard({ selectedItem, ItemDate }: ItemCardProps) {
             <FontAwesomeIcon size="sm" icon={faAngleLeft} />
             VOLTAR
           </NavLink>
-          <a className="hover:underline hover:underline-offset-4" href={"# "}>
-            GITHUB <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
+          <a
+            className="hover:underline hover:underline-offset-4"
+            href={selectedItem.html_url}
+          >
+            VER NO GITHUB{" "}
+            <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
           </a>
         </div>
         <h1 className="text-2xl font-bold text-base-title">
