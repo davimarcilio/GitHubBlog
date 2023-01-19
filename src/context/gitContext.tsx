@@ -27,6 +27,8 @@ export interface Item {
 interface GitContextType {
   items: Item[];
   user: User;
+  isLoading: boolean;
+  getItems: (text?: string) => void;
 }
 export const GitContext = createContext({} as GitContextType);
 
@@ -37,16 +39,16 @@ interface GitContextProps {
 export function GitContextTsx({ children }: GitContextProps) {
   const [items, setItems] = useState([] as Item[]);
   const [user, setUser] = useState({} as User);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // async function getUser() {
-  //   const response = await
-  // }
-
-  async function getItems() {
-    const response = await api.get(
-      "/search/issues?q=Dynamic%20typing%20repo:daltonmenezes/test"
-    );
-    console.log(response.data.items.length);
+  async function getItems(text?: string) {
+    setItems([]);
+    setIsLoading(true);
+    const response = await api.get("/search/issues", {
+      params: {
+        q: `${!!text ? `${text}%20` : ""}repo:davimarcilio/GitHubBlog`,
+      },
+    });
 
     for (let i = 0; i < response.data.items.length; i++) {
       const {
@@ -71,21 +73,19 @@ export function GitContextTsx({ children }: GitContextProps) {
         },
       ]);
     }
-    const responseUser = await api.get("/users/daltonmenezes");
+    const responseUser = await api.get(`/users/davimarcilio`);
     const { avatar_url, bio, company, followers, html_url, login, name } =
       responseUser.data as User;
     setUser({ avatar_url, bio, company, followers, html_url, login, name });
+    setIsLoading(false);
   }
-  let i = 0;
+
   useEffect(() => {
-    if (i === 0) {
-      getItems();
-    }
-    i = i + 1;
+    getItems();
   }, []);
 
   return (
-    <GitContext.Provider value={{ items, user }}>
+    <GitContext.Provider value={{ items, user, isLoading, getItems }}>
       {children}
     </GitContext.Provider>
   );

@@ -33,14 +33,16 @@ export function Profile() {
             />
             <p>{user.login}</p>
           </div>
-          <div className="flex gap-2 text-base-subtitle items-center">
-            <FontAwesomeIcon
-              size="sm"
-              className="text-base-label"
-              icon={faBuilding}
-            />
-            {user.company}
-          </div>
+          {user.company && (
+            <div className="flex gap-2 text-base-subtitle items-center">
+              <FontAwesomeIcon
+                size="sm"
+                className="text-base-label"
+                icon={faBuilding}
+              />
+              {user.company}
+            </div>
+          )}
           <div className="flex gap-2 text-base-subtitle items-center">
             <FontAwesomeIcon
               className="text-base-label"
