@@ -4,7 +4,7 @@ import { Router } from "./Router";
 export function App() {
   return (
     <GitContextTsx>
-      <BrowserRouter>
+      <BrowserRouter basename={window.location.pathname || ""}>
         <Router />
       </BrowserRouter>
     </GitContextTsx>
