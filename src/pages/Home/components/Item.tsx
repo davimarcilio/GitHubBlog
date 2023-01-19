@@ -17,7 +17,7 @@ export function ItemIssue({ item }: ItemProps) {
       className="bg-base-post p-8 flex flex-col gap-5 cursor-pointer rounded-lg border-2 hover:border-base-label transition-colors border-base-post"
       to={`/${item.id}`}
     >
-      <div className="flex justify-between">
+      <div className="flex max-sm:flex-col max-sm:gap-3 justify-between">
         <h1 className="text-xl font-bold text-base-title"> {item.title} </h1>
         <span className="text-base-span text-sm"> {ItemDate} </span>
       </div>

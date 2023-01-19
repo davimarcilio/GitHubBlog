@@ -12,9 +12,9 @@ export function Home() {
       <Profile />
       <SearchForm />
 
-      <div className="grid grid-cols-2 gap-8 mb-10">
+      <div className="grid grid-cols-2 gap-8 mb-10 max-sm:grid-cols-1">
         {items.map((item) => (
-          <ItemIssue key={item.created_at} item={item} />
+          <ItemIssue key={item.html_url} item={item} />
         ))}
       </div>
     </section>

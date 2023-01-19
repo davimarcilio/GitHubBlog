@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { GitContext } from "../../../context/GitContext";
 
 export function SearchForm() {
@@ -6,15 +6,22 @@ export function SearchForm() {
   const { getItems, items } = useContext(GitContext);
 
   useEffect(() => {
-    let timeout = setTimeout(() => {
-      getItems(text);
-    }, 500);
-    return () => clearTimeout(timeout);
+    if (!!text) {
+      let timeout = setTimeout(() => {
+        getItems(text);
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
   }, [text]);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    getItems(text);
+  }
 
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
       className="w-full flex flex-col gap-3 mt-16 mb-12 "
     >
       <div className="flex justify-between">

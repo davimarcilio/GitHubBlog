@@ -11,10 +11,10 @@ export function Profile() {
   const { user } = useContext(GitContext);
 
   return (
-    <section className="flex px-10 py-8 shadow-xl items-center bg-base-profile  gap-8 rounded-xl">
+    <section className="flex max-sm:flex-col px-10 py-8 shadow-xl items-center bg-base-profile  gap-8 rounded-xl">
       <img className=" rounded-lg w-36" src={user.avatar_url} alt="" />
       <div className="flex flex-col gap-2 flex-1">
-        <div className="flex justify-between">
+        <div className="flex justify-between max-sm:items-center">
           <h1 className="text-2xl font-bold text-base-title">{user.name}</h1>
           <a
             className="text-blue font-bold text-xs hover:underline hover:underline-offset-4"
@@ -23,8 +23,10 @@ export function Profile() {
             GITHUB <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
           </a>
         </div>
-        <p className="text-base text-base-text">{user.bio}</p>
-        <div className="flex mt-4 gap-6">
+        <p className="text-base text-base-text max-sm:text-center">
+          {user.bio}
+        </p>
+        <div className="flex max-sm:flex-col max-sm:items-center mt-4 gap-6">
           <div className="flex gap-2 text-base-subtitle items-center">
             <FontAwesomeIcon
               size="sm"

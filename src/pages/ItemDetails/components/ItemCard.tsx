@@ -17,8 +17,8 @@ interface ItemCardProps {
 export function ItemCard({ selectedItem, ItemDate }: ItemCardProps) {
   return (
     <section className="flex px-10 py-8 shadow-xl items-center bg-base-profile  gap-8 rounded-xl">
-      <div className="flex flex-col justify-between gap-5  flex-1">
-        <div className="flex justify-between text-blue font-bold text-xs">
+      <div className="flex flex-col justify-between gap-5 max-sm:  flex-1">
+        <div className="flex  justify-between text-blue font-bold text-xs">
           <NavLink
             className={
               "flex gap-2 justify-center items-center hover:underline hover:underline-offset-4"
@@ -29,18 +29,18 @@ export function ItemCard({ selectedItem, ItemDate }: ItemCardProps) {
             VOLTAR
           </NavLink>
           <a
-            className="hover:underline hover:underline-offset-4"
+            className="hover:underline hover:underline-offset-4 max-sm:-right-10"
             href={selectedItem.html_url}
           >
             VER NO GITHUB{" "}
             <FontAwesomeIcon size="sm" icon={faUpRightFromSquare} />
           </a>
         </div>
-        <h1 className="text-2xl font-bold text-base-title">
+        <h1 className="text-2xl font-bold max-sm:text-center text-base-title">
           {selectedItem.title}
         </h1>
 
-        <div className="flex gap-6">
+        <div className="flex max-sm:flex-col max-sm:items-center gap-6">
           <div className="flex gap-2 text-base-subtitle items-center">
             <FontAwesomeIcon
               size="sm"

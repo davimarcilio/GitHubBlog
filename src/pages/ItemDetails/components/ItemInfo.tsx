@@ -10,7 +10,7 @@ export function ItemInfo({ selectedItem }: ItemInfoProps) {
 
   return (
     <div className="w-full py-10 px-8">
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <ReactMarkdown className="max-sm text-justify">{markdown}</ReactMarkdown>
     </div>
   );
 }
