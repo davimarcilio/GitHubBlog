@@ -11,9 +11,12 @@
 <p>🎨 Estilização com <a href="https://tailwindcss.com/">Tailwind CSS</a></p>
 <hr>
 
-<hr>
-<h2>Além do desafio</h2>
-<p>Foi adicionado paginação</p>
+![GitHubBlogGeral](https://user-images.githubusercontent.com/104699555/213546654-de4636f1-5700-4fae-9125-8f7ab258403c.gif)
 
 <hr>
-<h2>Teste a aplicação <a href="https://davimarcilio.github.io/DTMoney/">aqui!</a></h2>
+<h2>Responsividade WEB/Mobile</h2>
+
+![GitHubBlogGeralMobile](https://user-images.githubusercontent.com/104699555/213546508-0bcfb0bf-1d01-4cb4-8680-ef1548fb3d98.gif)
+
+<hr>
+<h2>Teste a aplicação <a href="https://davimarcilio.github.io/GitHubBlog/">aqui!</a></h2>
